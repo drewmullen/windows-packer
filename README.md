@@ -3,9 +3,10 @@
 This package can help create a Windows IIS AMI using HashiCorp Packer and deploy a single instance via Terraform. The steps are as follows:
 
 1. Fill in the `win-2022-iis/iis.auto.pkrvars.hcl` values with networking values
-2. Source shell with AWS Credentials (SSO or IAM user, etc)
-3. Execute Packer (below)
-4. Fill in `terraform/terraform.tfvars` with appropriate values
+1. Source shell with AWS Credentials (SSO or IAM user, etc)
+1. Execute Packer (below)
+1. Fill in `terraform/terraform.tfvars` with appropriate values
+1. Execute Terraform `apply`
 
 ```shell
 $ cd images/win-2022-iis
