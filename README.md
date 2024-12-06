@@ -20,7 +20,7 @@ $ packer build .
 
 Packer will communicate from the execution environment (laptop, pipeline) directly to the VM created in AWS. For this reason the executing environment must have a route to the VM including security group entries for WinRM. Packer presents other communicators including [AWS Session Manager](https://developer.hashicorp.com/packer/integrations/hashicorp/amazon/latest/components/builder/ebs#session-manager-connections) & [SSH](https://developer.hashicorp.com/packer/docs/communicators/ssh). Setup of other communicators for Windows is outside the scope of this document but you can find more information in the links provided.
 
-# Deploy new AMI
+## Deploy new AMI
 
 Once your values are filled into the `terraform/terraform.tfvars` you can deploy the infrastructure:
 
