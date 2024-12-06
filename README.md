@@ -19,6 +19,10 @@ Packer will communicate from the execution environment (laptop, pipeline) direct
 
 Once your values are filled into the `terraform/terraform.tfvars` you can deploy the infrastructure:
 
+Terraform is building a single VM using the AMI created in your account. To do that, Terraform needs to know the AMI id to reference when building the VM. We accomplish this using a [data source for the AMI](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami), specifically, searching using the name specified in the Packer config as part of a regex + `most_recet = true`.
+
+Additionally it will create a load balancer (AWS ALB) that will allow ingress communication based on the CIDR range defined in `var.lb_source_cidr_allow`. The instance has a security group that only allows traffic on port 80 from the LB itself (no other entities).
+
 ```shell
 $ cd terraform
 $ terraform init
